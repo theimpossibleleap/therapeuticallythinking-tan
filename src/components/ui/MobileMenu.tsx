@@ -1,12 +1,7 @@
-import Link from 'next/link'
+import { Link } from '@tanstack/react-router'
 import { Image } from '@unpic/react'
-import { useUIStore } from '@/app/stores/uiStore'
+import { useUIStore } from '#/stores/uiStore'
 import { X } from 'lucide-react'
-import { Playfair_Display } from 'next/font/google'
-
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-})
 
 export default function MobileMenu() {
   const showMenu = useUIStore((state) => state.mobileMenu)
@@ -18,7 +13,7 @@ export default function MobileMenu() {
       <div className="flex justify-between items-center">
         <div className="flex items-center">
           <Link
-            href="/"
+            to="/"
             className="text-2xl font-thin delay-20 transition-all duration-300 ease-in-out"
           >
             <Image
@@ -29,7 +24,7 @@ export default function MobileMenu() {
             />
           </Link>
           <div
-            className={`flex flex-col text-warm-cream ${playfairDisplay.className} tracking-[0.3em]`}
+            className={`flex flex-col text-warm-cream font-serif tracking-[0.3em]`}
           >
             <p>THERAPEUTICALLY</p>
             <p>THINKING</p>
@@ -41,7 +36,7 @@ export default function MobileMenu() {
         <li>
           <Link
             className="mobile-menu-button"
-            href="/ourstory"
+            to="/"
             onClick={() => setShowMenu()}
           >
             Our Story
@@ -50,7 +45,7 @@ export default function MobileMenu() {
         <li>
           <Link
             className="mobile-menu-button delay-10"
-            href="/clinicians"
+            to="/"
             onClick={() => setShowMenu()}
           >
             Clinicians
@@ -59,7 +54,7 @@ export default function MobileMenu() {
         <li>
           <Link
             className="mobile-menu-button"
-            href="/services"
+            to="/"
             onClick={() => setShowMenu()}
           >
             Services
@@ -68,7 +63,7 @@ export default function MobileMenu() {
         <li>
           <Link
             className="mobile-menu-button"
-            href="/pricing"
+            to="/"
             onClick={() => setShowMenu()}
           >
             Pricing
@@ -77,7 +72,7 @@ export default function MobileMenu() {
         <li>
           <Link
             className="mobile-menu-button"
-            href="/events"
+            to="/"
             onClick={() => setShowMenu()}
           >
             Events

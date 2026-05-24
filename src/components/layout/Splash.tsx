@@ -3,7 +3,7 @@ import { Image } from '@unpic/react'
 export default function Splash() {
   return (
     <>
-      <section className="relative min-h-fit h-dvh z-5 flex flex-col w-full justify-center items-center pt-30">
+      <section className="relative min-h-fit h-dvh z-5 flex flex-col w-full justify-center items-center pt-30 overflow-clip">
         <div className="px-8 sm:px-12 max-w-350 flex flex-col gap-14 mb-12">
           <h1 className="w-4/5 text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-thin">
             Therapy for the way you{' '}
@@ -32,8 +32,8 @@ export default function Splash() {
         <Image
           src="/images/cat.jpg"
           alt=""
-          className="object-cover -z-10 border-b border-glazed-pottery"
-          priority
+          layout="fullWidth"
+          className="absolute left-0 top-0 h-[calc(100dvh-10px)] min-h-[calc(100dvh-10px)] w-full object-cover overflow-none -z-10 border-b border-glazed-pottery/50"
         />
       </section>
     </>

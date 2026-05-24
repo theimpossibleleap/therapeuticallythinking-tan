@@ -1,25 +1,21 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { Link, useLocation } from '@tanstack/react-router'
 import Menu from '../ui/Menu'
 import { MenuIcon } from 'lucide-react'
-import { useUIStore } from '@/app/stores/uiStore'
+import { useUIStore } from '#/stores/uiStore'
 import MobileMenu from '../ui/MobileMenu'
 import { Image } from '@unpic/react'
-import { Playfair_Display } from 'next/font/google'
-
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-})
 
 export default function Header() {
   const [scrolled, setScrolled] = useState<boolean>(false)
   const showMenu = useUIStore((state) => state.mobileMenu)
   const setShowMenu = useUIStore((state) => state.toggleMobileMenu)
 
-  const currentPath = usePathname()
+  const currentPath = useLocation({
+    select: (location) => location.pathname,
+  })
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +40,7 @@ export default function Header() {
           <div className="flex justify-between items-center px-4 sm:px-8 h-full w-full">
             <div className="">
               <Link
-                href="/"
+                to="/"
                 className="font-thin delay-20 transition-all duration-300 ease-in-out flex items-center"
               >
                 <Image
@@ -55,7 +51,7 @@ export default function Header() {
                 />
 
                 <div
-                  className={`flex font-medium flex-col ${playfairDisplay.className} tracking-[0.3em] text-sm sm:text-md`}
+                  className={`flex font-medium flex-col font-serif tracking-[0.3em] text-sm sm:text-md`}
                 >
                   <p>THERAPEUTICALLY</p>
                   <p>THINKING</p>
