@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router'
 export default function Menu() {
   return (
     <div className="gap-4 hidden lg:flex">
-      <Link to="/" className="menu-button delay-40">
+      <Link to="/ourstory" className="menu-button delay-40">
         Our Story
       </Link>
       <Link className="menu-button delay-60" to="/">

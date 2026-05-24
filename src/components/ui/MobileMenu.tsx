@@ -36,7 +36,7 @@ export default function MobileMenu() {
         <li>
           <Link
             className="mobile-menu-button"
-            to="/"
+            to="/ourstory"
             onClick={() => setShowMenu()}
           >
             Our Story
