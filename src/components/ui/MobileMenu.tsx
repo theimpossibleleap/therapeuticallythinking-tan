@@ -45,7 +45,7 @@ export default function MobileMenu() {
         <li>
           <Link
             className="mobile-menu-button delay-10"
-            to="/"
+            to="/clinicians"
             onClick={() => setShowMenu()}
           >
             Clinicians

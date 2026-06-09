@@ -6,7 +6,7 @@ export default function Menu() {
       <Link to="/ourstory" className="menu-button delay-40">
         Our Story
       </Link>
-      <Link className="menu-button delay-60" to="/">
+      <Link className="menu-button delay-60" to="/clinicians">
         Clinicians
       </Link>
       <Link className="menu-button delay-80" to="/">
