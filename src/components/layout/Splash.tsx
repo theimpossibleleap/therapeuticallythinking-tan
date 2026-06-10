@@ -34,7 +34,7 @@ export default function Splash() {
             src="/images/cat.jpg"
             alt=""
             layout="fullWidth"
-            className="object-cover overflow-none -z-10 border-b border-warm-cream/60 w-150 h-full rounded-xl shadow-[8px_8px_0_var(--color-terra-cotta)] border"
+            className="object-cover overflow-none -z-10 border-b border-warm-cream/55 w-150 h-full rounded-xl shadow-[8px_8px_0_var(--color-terra-cotta)] border"
           />
         </div>
       </section>
