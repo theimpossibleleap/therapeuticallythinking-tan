@@ -6,7 +6,7 @@ export const Route = createFileRoute('/_pages')({
 
 function Pages() {
   return (
-    <section className="w-full h-screen min-h-screen flex justify-center pt-32">
+    <section className="w-full h-screen min-h-fit flex justify-center pt-32">
       <Outlet />
     </section>
   )
