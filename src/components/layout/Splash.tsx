@@ -4,8 +4,8 @@ export default function Splash() {
   return (
     <>
       <section className="relative min-h-fit h-fit z-5 flex w-full justify-center pt-40 pb-10 overflow-clip bg-glazed-pottery px-16">
-        <div className="flex flex-col xl:flex-row items-center justify-center">
-          <div className="max-w-175 flex flex-col gap-14 mb-12 ">
+        <div className="flex items-center justify-center">
+          <div className="w-full flex flex-col gap-14 mb-12 ">
             <h1 className="w-4/5 text-white text-2xl lg:text-3xl xl:text-4xl font-thin">
               Therapy for the way you{' '}
               <span className="italic text-warm-cream">think</span>,{' '}
@@ -34,7 +34,7 @@ export default function Splash() {
             src="/images/cat.jpg"
             alt=""
             layout="fullWidth"
-            className="object-cover overflow-none -z-10 border-b border-warm-cream/55 w-150 h-full rounded-xl shadow-[8px_8px_0_var(--color-terra-cotta)] border"
+            className="object-cover overflow-none -z-10 border-b border-warm-cream/55 w-80 h-80 xl:w-120 xl:h-120 rounded-xl shadow-[8px_8px_0_var(--color-terra-cotta)] border hidden lg:block"
           />
         </div>
       </section>
