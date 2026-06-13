@@ -12,7 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PagesRouteRouteImport } from './routes/_pages/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PagesOurstoryRouteImport } from './routes/_pages/ourstory'
-import { Route as PagesCliniciansRouteImport } from './routes/_pages/clinicians'
+import { Route as PagesCliniciansIndexRouteImport } from './routes/_pages/clinicians/index'
+import { Route as PagesCliniciansLyndseyRouteImport } from './routes/_pages/clinicians/lyndsey'
 
 const PagesRouteRoute = PagesRouteRouteImport.update({
   id: '/_pages',
@@ -28,35 +29,49 @@ const PagesOurstoryRoute = PagesOurstoryRouteImport.update({
   path: '/ourstory',
   getParentRoute: () => PagesRouteRoute,
 } as any)
-const PagesCliniciansRoute = PagesCliniciansRouteImport.update({
-  id: '/clinicians',
-  path: '/clinicians',
+const PagesCliniciansIndexRoute = PagesCliniciansIndexRouteImport.update({
+  id: '/clinicians/',
+  path: '/clinicians/',
+  getParentRoute: () => PagesRouteRoute,
+} as any)
+const PagesCliniciansLyndseyRoute = PagesCliniciansLyndseyRouteImport.update({
+  id: '/clinicians/lyndsey',
+  path: '/clinicians/lyndsey',
   getParentRoute: () => PagesRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/clinicians': typeof PagesCliniciansRoute
   '/ourstory': typeof PagesOurstoryRoute
+  '/clinicians/lyndsey': typeof PagesCliniciansLyndseyRoute
+  '/clinicians/': typeof PagesCliniciansIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/clinicians': typeof PagesCliniciansRoute
   '/ourstory': typeof PagesOurstoryRoute
+  '/clinicians/lyndsey': typeof PagesCliniciansLyndseyRoute
+  '/clinicians': typeof PagesCliniciansIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_pages': typeof PagesRouteRouteWithChildren
-  '/_pages/clinicians': typeof PagesCliniciansRoute
   '/_pages/ourstory': typeof PagesOurstoryRoute
+  '/_pages/clinicians/lyndsey': typeof PagesCliniciansLyndseyRoute
+  '/_pages/clinicians/': typeof PagesCliniciansIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/clinicians' | '/ourstory'
+  fullPaths: '/' | '/ourstory' | '/clinicians/lyndsey' | '/clinicians/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/clinicians' | '/ourstory'
-  id: '__root__' | '/' | '/_pages' | '/_pages/clinicians' | '/_pages/ourstory'
+  to: '/' | '/ourstory' | '/clinicians/lyndsey' | '/clinicians'
+  id:
+    | '__root__'
+    | '/'
+    | '/_pages'
+    | '/_pages/ourstory'
+    | '/_pages/clinicians/lyndsey'
+    | '/_pages/clinicians/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -87,24 +102,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PagesOurstoryRouteImport
       parentRoute: typeof PagesRouteRoute
     }
-    '/_pages/clinicians': {
-      id: '/_pages/clinicians'
+    '/_pages/clinicians/': {
+      id: '/_pages/clinicians/'
       path: '/clinicians'
-      fullPath: '/clinicians'
-      preLoaderRoute: typeof PagesCliniciansRouteImport
+      fullPath: '/clinicians/'
+      preLoaderRoute: typeof PagesCliniciansIndexRouteImport
+      parentRoute: typeof PagesRouteRoute
+    }
+    '/_pages/clinicians/lyndsey': {
+      id: '/_pages/clinicians/lyndsey'
+      path: '/clinicians/lyndsey'
+      fullPath: '/clinicians/lyndsey'
+      preLoaderRoute: typeof PagesCliniciansLyndseyRouteImport
       parentRoute: typeof PagesRouteRoute
     }
   }
 }
 
 interface PagesRouteRouteChildren {
-  PagesCliniciansRoute: typeof PagesCliniciansRoute
   PagesOurstoryRoute: typeof PagesOurstoryRoute
+  PagesCliniciansLyndseyRoute: typeof PagesCliniciansLyndseyRoute
+  PagesCliniciansIndexRoute: typeof PagesCliniciansIndexRoute
 }
 
 const PagesRouteRouteChildren: PagesRouteRouteChildren = {
-  PagesCliniciansRoute: PagesCliniciansRoute,
   PagesOurstoryRoute: PagesOurstoryRoute,
+  PagesCliniciansLyndseyRoute: PagesCliniciansLyndseyRoute,
+  PagesCliniciansIndexRoute: PagesCliniciansIndexRoute,
 }
 
 const PagesRouteRouteWithChildren = PagesRouteRoute._addFileChildren(

@@ -1,6 +1,7 @@
+import ClinicianCard from '#/components/ui/ClinicianCard'
 import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createFileRoute('/_pages/clinicians')({
+export const Route = createFileRoute('/_pages/clinicians/')({
   component: Clinicians,
 })
 
@@ -10,6 +11,11 @@ function Clinicians() {
       <h1 className="font-medium text-lg md:text-3xl text-glazed-pottery">
         <span className="italic">Clinicians</span>.
       </h1>
+      <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 gap-16">
+        <ClinicianCard />
+        <ClinicianCard />
+        <ClinicianCard />
+      </div>
     </section>
   )
 }
