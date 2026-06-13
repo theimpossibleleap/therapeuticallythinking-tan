@@ -8,7 +8,7 @@ export default function MobileMenu() {
   const setShowMenu = useUIStore((state) => state.toggleMobileMenu)
   return (
     <div
-      className={`px-4 py-[0.425em] sm:px-12 z-1000 transition-all duration-300 ease-in-out fixed top-0 left-0 bg-glazed-pottery/80 backdrop-blur-xl w-full h-dvh ${showMenu ? 'visible opacity-100' : 'invisible opacity-0'}`}
+      className={`sm:px-8 pt-5.75 px-6 pt:mt-8 z-1000 transition-all duration-300 ease-in-out fixed top-0 left-0 bg-glazed-pottery/80 backdrop-blur-xl w-full h-dvh ${showMenu ? 'visible opacity-100' : 'invisible opacity-0'}`}
     >
       <div className="flex justify-between items-center">
         <div className="flex items-center">
@@ -24,7 +24,7 @@ export default function MobileMenu() {
             />
           </Link>
           <div
-            className={`flex flex-col text-warm-cream font-serif tracking-[0.3em]`}
+            className={`flex flex-col text-warm-cream font-medium font-serif tracking-[0.3em] text-sm sm:text-md`}
           >
             <p>THERAPEUTICALLY</p>
             <p>THINKING</p>

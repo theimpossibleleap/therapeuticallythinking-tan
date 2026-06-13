@@ -34,7 +34,7 @@ export default function Splash() {
             src="/images/cat.jpg"
             alt=""
             layout="fullWidth"
-            className="object-cover overflow-none -z-10 border-b border-warm-cream/55 w-80 h-80 xl:w-120 xl:h-120 rounded-xl shadow-[8px_8px_0_var(--color-terra-cotta)] border hidden lg:block"
+            className="absolute lg:static top-0 left-0 object-cover overflow-none -z-10 border-b border-warm-cream/55 w-full h-full opacity-25 lg:opacity-100 lg:w-120 lg:h-120 rounded-xl shadow-[8px_8px_0_var(--color-terra-cotta)] border lg:block"
           />
         </div>
       </section>

@@ -17,7 +17,7 @@ function OurStory() {
         change.
       </h2>
       <div className="flex flex-col items-center md:block">
-        <div className="relative float-left mr-16 mb-8 w-96 h-120">
+        <div className="relative float-left mr-16 mb-16 w-96 h-120">
           <Image
             src="/images/lyndsey_troccoli.png"
             layout="fullWidth"
